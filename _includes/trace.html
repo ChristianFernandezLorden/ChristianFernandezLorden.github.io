@@ -1,0 +1,29 @@
+{%- comment -%}
+  The simulated neuron.
+    {% include trace.html %}                 the trace alone, full width (home page)
+    {% include trace.html controls=true %}   inside a note, with the legend and the two sliders
+{%- endcomment -%}
+{%- assign how = site.posts | where: "explains_trace", true | first -%}
+<div class="trace-demo{% if include.controls %} trace-demo-inline{% endif %}">
+<button class="trace" type="button" aria-label="Send an input pulse to the simulated neuron" aria-describedby="trace-caption">
+<canvas aria-hidden="true"></canvas>
+</button>
+<div class="trace-panel{% unless include.controls %} wrap{% endunless %}">
+{%- if include.controls %}
+<p class="trace-caption" id="trace-caption">Click the trace to send an input pulse. Releasing a slider sends one too.</p>
+<form class="trace-controls" hidden>
+<div class="trace-legend">
+<span class="trace-key"><i class="trace-key-input"></i>Input <span class="math">u</span></span>
+<span class="trace-key"><i class="trace-key-response"></i>Sigmoid input <span class="math">v</span></span>
+</div>
+<div class="trace-sliders">
+<label>Amplitude <span class="math">A</span> <input type="range" data-trace="amplitude" min="0" max="2" step="0.05" value="1"> <output data-trace="amplitude-value">1.00</output></label>
+<label>Time constant <span class="math">τ<sub>in</sub></span> <input type="range" data-trace="timescale" min="0" max="1" step="0.01" value="0.38"> <output data-trace="timescale-value">2.0</output></label>
+</div>
+</form>
+{%- else %}
+<p class="trace-caption" id="trace-caption">A simulated neuron at rest. Click the trace to send it an input pulse, drawn in grey.{% if how %} <a href="{{ how.url | relative_url }}">How it works</a>{% endif %}</p>
+{%- endif %}
+</div>
+<script src="{{ '/assets/js/trace.js' | relative_url }}" defer></script>
+</div>

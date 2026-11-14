@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% include trace.html %}
+<div class="wrap">
+  <div class="intro">
+{{ content }}
+  </div>
+
+  {% assign selected = site.data.publications | where: "selected", true %}
+  {% assign selected_software = site.data.software | where: "selected", true %}
+  {% if selected.size > 0 or selected_software.size > 0 %}
+  <section aria-labelledby="home-research">
+    <div class="section-head"><h2 id="home-research">Selected research</h2><a href="{{ '/research/' | relative_url }}">All research</a></div>
+    <ul class="entries">
+      {% for pub in selected %}{% include pub.html pub=pub %}{% endfor %}
+      {% for software in selected_software %}{% include software.html software=software %}{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% assign talks = site.data.talks | sort: "date" | reverse %}
+  {% if talks.size > 0 %}
+  <section aria-labelledby="home-talks">
+    <div class="section-head"><h2 id="home-talks">Recent talks</h2><a href="{{ '/talks/' | relative_url }}">All talks</a></div>
+    <ul class="entries">
+      {% for talk in talks limit: 3 %}{% include talk.html talk=talk %}{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if site.posts.size > 0 %}
+  <section aria-labelledby="home-notes">
+    <div class="section-head"><h2 id="home-notes">Notes</h2><a href="{{ '/notes/' | relative_url }}">All notes</a></div>
+    <ul class="entries">
+      {% for note in site.posts limit: 4 %}{% include note.html note=note %}{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</div>

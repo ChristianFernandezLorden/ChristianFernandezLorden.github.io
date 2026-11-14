@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="wrap">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <div class="prose">
+{{ content }}
+  </div>
+
+  {% if site.posts.size > 0 %}
+  <ul class="entries">
+    {% for note in site.posts %}{% include note.html note=note %}{% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">No notes yet. Add the first one to the <code>_posts</code> folder.</p>
+  {% endif %}
+</article>

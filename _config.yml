@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------------------
+# Site settings. Edit these first.
+# ---------------------------------------------------------------------------
+title: Christian Fernandez Lorden
+tagline: Neuromorphic control
+description: >-
+  PhD student at the University of Liège working on neuromorphic control.
+lang: en
+
+author:
+  name: Christian Fernandez Lorden
+  # How your name appears in author lists; it is highlighted on the Research page.
+  cite_as: C. Fernandez Lorden
+  affiliation: Neuroengineering Lab, Montefiore Institute, University of Liège
+  # Leave any of these empty to hide the link in the footer.
+  email: Christian.FernandezLorden@uliege.be
+  github: ChristianFernandezLorden
+  scholar: https://scholar.google.com/citations?user=ywgxpW4AAAAJ&hl=en          # full URL of your Google Scholar profile
+  linkedin: https://www.linkedin.com/in/christian-fernandez-lorden-34b5a0388/    # full URL of your LinkedIn profile
+  orcid: 0009-0008-6197-5692             # e.g. 0000-0002-1825-0097
+  cv:                 # e.g. /assets/cv.pdf
+
+# If the repository is named USERNAME.github.io, leave both lines as they are.
+# If it has another name (a "project site"), set baseurl to "/repository-name".
+baseurl: ""
+# url: "https://USERNAME.github.io"   # GitHub Pages fills this in for you
+
+# ---------------------------------------------------------------------------
+# Build settings. You should not need to touch these.
+# ---------------------------------------------------------------------------
+permalink: /notes/:year/:month/:title/
+timezone: Europe/Brussels
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: /feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+      math: true          # loads MathJax; set "math: false" in a note that has no equations
+  - scope: { path: "assets/slides" }
+    values: { sitemap: false }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

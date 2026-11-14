@@ -1,0 +1,10 @@
+{%- assign talk = include.talk -%}
+<li class="entry"{% if talk.key and include.anchor %} id="{{ talk.key }}"{% endif %}>
+  <time class="entry-date" datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
+  <div class="entry-body">
+    <p class="entry-title">{{ talk.title }}</p>
+    <p class="entry-meta">{{ talk.kind | default: "Talk" }} at {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}.</p>
+    {% if talk.summary and include.summary %}<details class="abstract"><summary>Summary</summary><p>{{ talk.summary }}</p></details>{% endif %}
+    {% include links.html item=talk %}
+  </div>
+</li>

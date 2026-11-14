@@ -1,0 +1,10 @@
+{%- assign pub = include.pub -%}
+{%- capture me -%}<span class="me">{{ site.author.cite_as }}</span>{%- endcapture -%}
+<li class="entry"{% if pub.key and include.anchor %} id="{{ pub.key }}"{% endif %}>
+  <span class="entry-date">{{ pub.year }}</span>
+  <div class="entry-body">
+    <p class="entry-title">{{ pub.title }}</p>
+    <p class="entry-meta">{{ pub.authors | replace: site.author.cite_as, me }}. <em>{{ pub.venue }}</em>{% if pub.note %}, {{ pub.note }}{% endif %}.</p>
+    {% include links.html item=pub %}
+  </div>
+</li>

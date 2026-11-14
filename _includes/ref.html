@@ -1,0 +1,23 @@
+{%- comment -%}
+  Refer to a paper or a talk from a note, by its key.
+    {% include ref.html key="spiking-2026" %}              inline link: the title, pointing to its entry
+    {% include ref.html key="spiking-2026" text="our paper" %}   same, with your own words
+    {% include ref.html key="spiking-2026" card=true %}    the full entry, with its links, as a block
+{%- endcomment -%}
+{%- assign item = site.data.publications | where: "key", include.key | first -%}
+{%- assign page_url = "/research/" -%}
+{%- assign is_talk = false -%}
+{%- unless item -%}
+  {%- assign item = site.data.talks | where: "key", include.key | first -%}
+  {%- assign page_url = "/talks/" -%}
+  {%- assign is_talk = true -%}
+{%- endunless -%}
+{%- if item == nil -%}
+<strong class="ref-missing">[no paper or talk with key "{{ include.key }}"]</strong>
+{%- elsif include.card -%}
+<ul class="entries ref-card">
+{%- if is_talk %}{% include talk.html talk=item summary=true %}{% else %}{% include pub.html pub=item %}{% endif -%}
+</ul>
+{%- else -%}
+<a href="{{ page_url | relative_url }}#{{ item.key }}">{% if include.text %}{{ include.text }}{% else %}<cite>{{ item.title }}</cite>{% endif %}</a>
+{%- endif -%}

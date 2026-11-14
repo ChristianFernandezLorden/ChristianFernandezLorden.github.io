@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="wrap">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <div class="prose">
+{{ content }}
+  </div>
+
+  {% assign types = "preprint,journal,conference,thesis" | split: "," %}
+  {% assign headings = "Preprints,Journal articles,Conference papers,Theses" | split: "," %}
+  {% for type in types %}
+    {% assign pubs = site.data.publications | where: "type", type | sort: "year" | reverse %}
+    {% if pubs.size > 0 %}
+  <section aria-labelledby="pubs-{{ type }}">
+    <div class="section-head"><h2 id="pubs-{{ type }}">{{ headings[forloop.index0] }}</h2></div>
+    <ul class="entries">
+      {% for pub in pubs %}{% include pub.html pub=pub anchor=true %}{% endfor %}
+    </ul>
+  </section>
+    {% endif %}
+  {% endfor %}
+
+  {% if site.data.software.size > 0 %}
+  <section aria-labelledby="software">
+    <div class="section-head"><h2 id="software">Software</h2></div>
+    <ul class="entries">
+      {% for software in site.data.software %}{% include software.html software=software %}{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

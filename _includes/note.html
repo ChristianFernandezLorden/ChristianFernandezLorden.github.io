@@ -1,0 +1,8 @@
+{%- assign note = include.note -%}
+<li class="entry">
+  <time class="entry-date" datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: "%b %Y" }}</time>
+  <div class="entry-body">
+    <p class="entry-title"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></p>
+    {% if note.summary %}<p class="entry-meta">{{ note.summary }}</p>{% endif %}
+  </div>
+</li>

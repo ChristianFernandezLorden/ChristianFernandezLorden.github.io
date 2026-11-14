@@ -1,0 +1,9 @@
+{%- assign sw = include.software -%}
+<li class="entry">
+  <span class="entry-date">{{ sw.year }}</span>
+  <div class="entry-body">
+    <p class="entry-title">{{ sw.name }}</p>
+    <p class="entry-meta">{{ sw.kind | default: "Software" }}{% if sw.status %}, <em>{{ sw.status }}</em>{% endif %}. {{ sw.description }}</p>
+    {% include links.html item=sw %}
+  </div>
+</li>

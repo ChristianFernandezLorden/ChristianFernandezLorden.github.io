@@ -1,0 +1,16 @@
+{%- assign i = include.item -%}
+{%- if i.abstract or i.pdf or i.arxiv or i.doi or i.code or i.slides or i.poster or i.video or i.paper or i.bibtex or i.links -%}
+<div class="entry-links">
+  {% if i.pdf %}<a href="{% include href.html to=i.pdf %}">PDF</a>{% endif %}
+  {% if i.arxiv %}<a href="https://arxiv.org/abs/{{ i.arxiv }}">arXiv</a>{% endif %}
+  {% if i.doi %}<a href="https://doi.org/{{ i.doi }}">DOI</a>{% endif %}
+  {% if i.abstract %}<a href="{% include href.html to=i.abstract %}">Abstract</a>{% endif %}
+  {% if i.paper %}<a href="{% include href.html to=i.paper %}">Paper</a>{% endif %}
+  {% if i.slides %}<a href="{% include href.html to=i.slides %}">Slides</a>{% endif %}
+  {% if i.poster %}<a href="{% include href.html to=i.poster %}">Poster</a>{% endif %}
+  {% if i.video %}<a href="{% include href.html to=i.video %}">Video</a>{% endif %}
+  {% if i.code %}<a href="{% include href.html to=i.code %}">Code</a>{% endif %}
+  {% for link in i.links %}<a href="{% include href.html to=link.url %}">{{ link.label }}</a>{% endfor %}
+  {% if i.bibtex %}<details><summary>BibTeX</summary><pre><code>{{ i.bibtex | strip | escape }}</code></pre></details>{% endif %}
+</div>
+{%- endif -%}

@@ -1,0 +1,2 @@
+{%- comment -%} Prints a URL: full URLs are left alone, site paths get the baseurl. {%- endcomment -%}
+{%- if include.to contains "://" -%}{{ include.to }}{%- else -%}{{ include.to | relative_url }}{%- endif -%}

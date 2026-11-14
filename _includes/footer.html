@@ -1,0 +1,18 @@
+{%- assign a = site.author -%}
+<footer class="site-footer wrap">
+  <ul>
+    {% if a.email %}<li><a href="mailto:{{ a.email }}">Email</a></li>{% endif %}
+    {% if a.github %}<li><a href="https://github.com/{{ a.github }}" rel="me">GitHub</a></li>{% endif %}
+    {% if a.scholar %}<li><a href="{{ a.scholar }}" rel="me">Google Scholar</a></li>{% endif %}
+    {% if a.linkedin %}<li><a href="{{ a.linkedin }}" rel="me">LinkedIn</a></li>{% endif %}
+    {% if a.orcid %}<li><a href="https://orcid.org/{{ a.orcid }}" rel="me">ORCID</a></li>{% endif %}
+    {% if a
+      .cv %}<li><a href="{% include href.html to=a.cv %}">CV</a></li>{% endif %}
+    <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+  </ul>
+  <p>
+    <button class="theme-toggle" id="theme-toggle" type="button" hidden>Dark mode</button>
+    <span>© {{ site.time | date: "%Y" }} {{ a.name }}</span>
+  </p>
+</footer>
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>

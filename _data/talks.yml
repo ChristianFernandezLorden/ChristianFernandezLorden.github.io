@@ -1,0 +1,59 @@
+# One entry per talk or poster. Only title, event and date are required.
+#
+#   kind      Talk | Seminar | Poster | Lecture   (free text, shown before the event name)
+#   date      "YYYY-MM-DD", in quotes
+#   slides    a PDF you put in assets/slides/, or a full URL
+#   video, paper, poster, abstract   full URLs, or files in assets/
+#   resume  shown behind an "Resume" switch
+#
+# The two entries below are examples: replace them with your own.
+
+
+
+- title: A Two-Block Model of Neuronal Excitability
+  key: two-block-excitability-poster
+  kind: Poster
+  authors: C. Fernandez Lorden, J. Adriaens, A. Franci and G. Bainier
+  event: Neuromorphic Computing Netherlands 2026
+  location: Maastricht, the Netherlands
+  date: "2026-10-20"
+  poster: /assets/posters/NCN2026_Bainier_TwoBlocksExcitability.pdf
+  summary: >-
+    Presents a new two-block model of neuronal excitability called the "High-Pass model".
+
+
+- title: Mitigating mismatch in neuromorphic circuits using neuromodulation loops
+  kind: Talk
+  event: 45th Benelux Meeting on Systems and Control
+  location: Lommel, Belgium
+  date: "2026-03-25"
+  slides: /assets/slides/BeneluxMeeting2026_FernandezLorden_slides.pdf
+  abstract: /assets/abstracts/BeneluxMeeting2026_FernandezLorden_abstract.pdf
+  summary: >-
+    Shows how neuromodulation loops can be used to mitigate mismatch in neuromorphic circuits, improving their performance and robustness.
+
+- title: The Neuromorphic Control MATLAB®  toolbox
+  kind: Talk
+  event: 44th Benelux Meeting on Systems and Control
+  location: Egmond aan Zee, the Netherlands
+  date: "2025-03-19"
+  slides: /assets/slides/BeneluxMeeting2025_FernandezLorden_slides.pdf
+  abstract: /assets/abstracts/BeneluxMeeting2025_FernandezLorden_abstract.pdf
+  summary: >-
+    Introduces the Neuromorphic Control MATLAB®  toolbox, a software package for simulating and analyzing neuromorphic control systems.
+
+- title: Embodied neuromodulation for neuromorphic rhythmic control
+  kind: Poster
+  event: International Conference on Neuromorphic Computing and Engineering (ICNCE) 2024
+  location: Aachen, Germany
+  date: "2024-06-04"
+  poster: /assets/posters/ICNCE2024_FernandezLorden_Mendolia_Poster.pdf
+  summary: >-
+    Presents a new approach to neuromorphic rhythmic control using embodied neuromodulation and shows possible CMOS implementations of the proposed circuits.
+
+# - title: Title of a seminar
+#   kind: Seminar
+#   event: Name of the group or department
+#   location: City, Country
+#   date: "2024-11-20"
+#   slides: /assets/slides/example-talk.pdf

@@ -1,0 +1,135 @@
+# One entry per paper. Everything except title, authors, year and type is optional.
+#
+#   type      preprint | journal | conference | thesis   (decides the section on the Research page)
+#   selected  true to also show the paper on the home page
+#   pdf       a file you put in assets/papers/, or a full URL
+#   arxiv     the arXiv identifier only, e.g. "2401.01234"
+#   doi       the DOI only, e.g. "10.1109/TAC.2024.1234567"
+#   code, slides, video   full URLs, or files in assets/
+#   bibtex    shown behind a "BibTeX" switch
+#
+# The three entries below are examples: replace them with your own.
+
+- title: Characterization of the Frequency-Current Curve of First-Order High-Pass Neurons
+  authors: C. Fernandez Lorden, J. Adriaens, A. Franci and G. Bainier
+  venue: Preprint
+  year: 2026
+  type: preprint
+  selected: true
+  doi: 10.48550/arXiv.2611.09508
+  arxiv: 2611.09508
+  pdf: /assets/papers/ECC_2027_FernandezLorden_FIcurve.pdf
+  code: https://github.com/ChristianFernandezLorden/ECC27-FernandezLorden-HighPassNeuronFICurve
+  bibtex: |
+    @unpublished{fernandezlorden2026title,
+      author        = {Fernandez Lorden, Christian and Adriaens, Jérôme and Franci, Alessio and Bainier, Gustave},
+      url           = {https://doi.org/10.48550/arXiv.2611.09508},
+      doi           = {10.48550/arXiv.2611.09508},
+      title         = {Characterization of the Frequency-Current Curve of First-Order High-Pass Neurons},
+      month         = nov,
+      year          = {2026},
+      note          = {Preprint},
+      publisher     = {arXiv},
+      howpublished  = {arXiv:2611.09508 [eess.SY]},
+      eprint        = {2611.09508},
+      archivePrefix = {arXiv},
+      primaryClass  = {eess.SY},
+    }
+
+- title: Proportional Neuro-Impulsive Control of SISO LTI Systems
+  authors: C. Fernandez Lorden, E. Petri, W.P.M.H Heemels and A. Franci
+  venue: Preprint
+  year: 2026
+  type: preprint
+  selected: true
+  doi: 10.48550/arXiv.2611.13043
+  arxiv: 2611.13043 
+  pdf: /assets/papers/ECC_2027_FernandezLorden_SISONeuroImpulsive.pdf
+  code: https://github.com/ChristianFernandezLorden/ECC27-FernandezLorden-SISONeuroImpulsive
+  bibtex: |
+    @unpublished{fernandezlorden2026title,
+      author        = {Fernandez Lorden, Christian and Petri, Elena and Heemels, W. P. M. H. and Franci, Alessio},
+      url           = {https://doi.org/10.48550/arXiv.2611.13043},
+      doi           = {10.48550/arXiv.2611.13043},
+      title         = {Proportional Neuro-Impulsive Control of {SISO} {LTI} Systems},
+      month         = nov,
+      year          = {2026},
+      note          = {Preprint},
+      publisher     = {arXiv},
+      howpublished  = {arXiv:2611.13043 [eess.SY]},
+      eprint        = {2611.13043},
+      archivePrefix = {arXiv},
+      primaryClass  = {eess.SY},
+    }
+
+- title: Types of Bursting with a Two-Block Spiking Primitive
+  authors: A. Fyon, J. Brandoit, L. Mendolia, P. Sacré, G. Drion, A. Franci, C. Fernandez Lorden and G. Bainier
+  venue: Preprint
+  year: 2026
+  type: preprint
+  selected: false
+  doi: 10.48550/arXiv.2611.08045
+  arxiv: 2611.08045
+  pdf: /assets/papers/ECC_2027_Fyon_Bursting.pdf
+  code: https://github.com/arthur-fyon/ECC_2027_Fyon
+  bibtex: |
+    @unpublished{fernandezlorden2026title,
+      author        = {Fyon, Arthur and Brandoit, Julien and Mendolia, Loris and Sacré, Pierre and Drion, Guillaume and Franci, Alessio and Fernandez Lorden, Christian and Bainier, Gustave},
+      url           = {https://doi.org/10.48550/arXiv.2611.08045},
+      doi           = {10.48550/arXiv.2611.08045},
+      title         = {Types of Bursting with a Two-Block Spiking Primitive},
+      month         = nov,
+      year          = {2026},
+      note          = {Preprint},
+      publisher     = {arXiv},
+      howpublished  = {arXiv:2611.08045 [eess.SY]},
+      eprint        = {2611.08045},
+      archivePrefix = {arXiv},
+      primaryClass  = {eess.SY},
+    }
+
+
+- title: Excitability of High-Frequency Positive Feedback
+  key: excitability-high-pass-threshold-paper
+  authors: G. Bainier, A. Fyon, C. Fernandez Lorden and A. Franci
+  venue: Preprint
+  year: 2026
+  type: preprint
+  selected: false
+  doi: 10.48550/arXiv.2611.06822
+  arxiv: 2611.06822 
+  pdf: /assets/papers/ECC_2027_Bainier_ExcitabilityThreshold.pdf
+  bibtex: |
+    @unpublished{fernandezlorden2026title,
+      author        = {Bainier, Gustave and Fyon, Arthur and Fernandez Lorden, Christian and Franci, Alessio},
+      url           = {https://doi.org/10.48550/arXiv.2611.06822},
+      doi           = {10.48550/arXiv.2611.06822},
+      title         = {Excitability of High-Frequency Positive Feedback},
+      month         = nov,
+      year          = {2026},
+      note          = {Preprint},
+      publisher     = {arXiv},
+      howpublished  = {arXiv:2611.06822 [eess.SY]},
+      eprint        = {2611.06822},
+      archivePrefix = {arXiv},
+      primaryClass  = {eess.SY},
+    }
+
+
+# - title: Title of a conference paper
+#   authors: C. Fernandez Lorden, A. Coauthor and B. Coauthor
+#   venue: Name of the conference
+#   note: City, Country
+#   year: 2026
+#   type: conference
+#   selected: true
+#   pdf: /assets/papers/example-paper.pdf
+#   slides: /assets/slides/example-talk.pdf
+
+# - title: Title of a journal article
+#   authors: A. Coauthor and C. Fernandez Lorden
+#   venue: Name of the journal
+#   note: vol. 1, no. 1, pp. 1–10
+#   year: 2025
+#   type: journal
+#   pdf: /assets/papers/example-paper.pdf
