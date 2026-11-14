@@ -1,6 +1,6 @@
 # Personal site
 
-A small Jekyll site for GitHub Pages: research, talks and notes. GitHub builds it for you on every push, so there is nothing to install.
+A small Jekyll site for GitHub Pages: research, talks, posters, software, and notes. GitHub builds it for you on every push, so there is nothing to install.
 
 ## Put it online
 
@@ -31,14 +31,18 @@ If you use another repository name, the site lives at `https://USERNAME.github.i
 | Research themes (the text above the paper list) | `research.md` |
 | Papers | `_data/publications.yml` |
 | Talks and posters | `_data/talks.yml` |
+| Software | `_data/software.yml` |
 | Links in the header | `_data/nav.yml` |
 | Colours, fonts, column width | the "Tokens" block at the top of `assets/css/main.css` |
 
-The papers and talks that ship with the site are examples. So are the two PDF files in `assets/papers/` and `assets/slides/`.
+The papers, talks, posters and software that ship with the site are mine.
 
 ## Add a paper
 
 Add an entry to `_data/publications.yml`. The fields are described at the top of that file. Put the PDF in `assets/papers/` and point `pdf:` at it. Set `selected: true` to show the paper on the home page as well.
+
+## Add a software
+Add an entry to `_data/software.yml`. The software entry will appear on the Reseach page.
 
 ## Add a talk
 
@@ -113,11 +117,13 @@ assets/js/         trace.js (the neuron on the home page), site.js (dark mode sw
 assets/fonts/      the two typefaces, with their licences
 assets/papers/     PDFs of papers
 assets/slides/     PDFs of slides
+assets/abstracts/  PDFs of abstracts
+assets/posters/    PDFs of posters
 ```
 
 ## Good to know
 
-- The line on the home page is a FitzHugh–Nagumo model integrated in the browser (`assets/js/trace.js`). It only animates while a spike is on screen. To remove it, delete the `{% include trace.html %}` line in `_layouts/home.html`.
+- The line on the home page is a High-Pass neuron model integrated in the browser (`assets/js/trace.js`). It only animates while a spike is on screen. To remove it, delete the `{% include trace.html %}` line in `_layouts/home.html`.
 - The site follows the visitor's light or dark setting. The switch in the footer overrides it.
 - An RSS feed of the notes is at `/feed.xml`.
 - The fonts (STIX Two Text and IBM Plex Sans) are stored in the repository, so the site makes no request to a font service. Both are under the SIL Open Font License. MathJax is the only thing loaded from elsewhere (the jsDelivr CDN), and only on notes.
